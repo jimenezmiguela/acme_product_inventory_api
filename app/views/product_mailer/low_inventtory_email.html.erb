@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Attention: Product Quantity is Zero</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #d9534f; /* Red for urgency */
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 10px 0;
+      }
+      .product-name {
+        font-weight: bold;
+        color: #5bc0de; /* Light blue for emphasis */
+      }
+      .quantity {
+        font-size: 18px;
+        font-weight: bold;
+        color: #d9534f; /* Red to indicate low stock */
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #777;
+        text-align: center;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #0275d8;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+      .button:hover {
+        background-color: #025aa5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <h1>Attention: <%= @product.name.capitalize %> Quantity is Zero</h1>
+
+      <p>The product <span class="product-name"><%= @product.name %></span> has reached zero quantity.</p>
+
+      <p class="quantity">Current Quantity: <%= @product.quantity %></p>
+
+      <div class="footer">
+        <p>ACME ©2025</p>
+      </div>
+    </div>
+  </body>
+</html>
