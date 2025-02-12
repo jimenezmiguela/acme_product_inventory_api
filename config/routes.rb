@@ -1,14 +1,26 @@
 Rails.application.routes.draw do
-  get 'products/index'
-  get 'products/new'
-  get 'products/show'
-  get 'products/edit'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  mount Rswag::Ui::Engine => '/swagger'
+  mount Rswag::Api::Engine => '/swagger'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # API routes (JSON responses)
+  namespace :api do
+    resources :products, only: %i[index show create update destroy] do
+      member do
+        patch :increase_quantity
+        patch :decrease_quantity
+      end
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Non-API routes for views (HTML responses)
+  resources :products do
+    member do
+      post 'update_quantity'
+    end
+  end
+
+  # Root route for the page showing products with ability to CRUD
+  root to: 'products#index'
+
+  get '/favicon.ico', to: proc { [204, {}, ['']] }
 end
