@@ -1,0 +1,11 @@
+<h1 class="mb-4"><%= @product.name %></h1>
+
+<p class="mb-3"><strong>Quantity:</strong> <%= @product.quantity %></p>
+
+<%= link_to "Update #{@product.name}", edit_product_path(@product), class: 'btn btn-warning' %> |
+
+<%= link_to 'Back to Products', products_path, class: 'btn btn-secondary' %> |
+
+<%= form_with model: @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-inline' do |form| %>
+  <%= form.submit "Delete #{@product.name}", class: 'btn btn-danger' %>
+<% end %>

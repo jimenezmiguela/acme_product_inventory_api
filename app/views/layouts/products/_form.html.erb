@@ -1,0 +1,30 @@
+<%= form_with(model: @product, local: true, class: "needs-validation", novalidate: true) do |form| %>
+
+  <% if @product.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4 class="alert-heading">Form Submission Errors</h4>
+      <ul>
+        <% @product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true, autofocus: true %>
+    <div class="invalid-feedback">Product name is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :quantity, class: "form-label" %>
+    <%= form.number_field :quantity, class: "form-control", required: true, min: 0 %>
+    <div class="invalid-feedback">Please enter a valid quantity (greater than or equal to 0).</div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit action_name == 'new' ? 'Create Product' : 'Update Product', class: "btn btn-primary" %>
+  </div>
+
+<% end %>
