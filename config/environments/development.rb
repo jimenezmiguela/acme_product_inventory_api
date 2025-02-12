@@ -38,6 +38,21 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # In config/environments/development.rb (or production.rb)
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', # or any other email service provider
+    port: 587,
+    domain: 'gmail.com',
+    user_name: ENV['EMAIL_USERNAME'], # You can set this in your .env file or Rails secrets
+    password: ENV['EMAIL_PASSWORD'], # You can set this in your .env file or Rails secrets
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  # Make sure mailer sends emails in development environment
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
