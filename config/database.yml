@@ -79,6 +79,9 @@ test:
 #
 production:
   <<: *default
-  database: acme_product_inventory_api_production
-  username: acme_product_inventory_api
-  password: <%= ENV["ACME_PRODUCT_INVENTORY_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %> # This picks up the DATABASE_URL from environment variables
+  database: <%= URI.parse(ENV['DATABASE_URL']).path[1..-1] %> # Extracts the database name
+  username: <%= URI.parse(ENV['DATABASE_URL']).user %> # Extracts the username
+  password: <%= URI.parse(ENV['DATABASE_URL']).password %> # Extracts the password
+  host: <%= URI.parse(ENV['DATABASE_URL']).host %> # Extracts the host
+  port: <%= URI.parse(ENV['DATABASE_URL']).port %> # Extracts the port
