@@ -3,6 +3,6 @@ class ProductMailer < ApplicationMailer
 
   def low_inventory_email(product)
     @product = product
-    mail(to: 'jimenezmiguela@yahoo.com', subject: "Hello. This is ACME Inventory. #{product.name} is out of stock")
+    mail(to: 'davidbrian080@gmail.com', subject: "Hello. This is ACME Inventory. #{product.name} is out of stock")
   end
 end

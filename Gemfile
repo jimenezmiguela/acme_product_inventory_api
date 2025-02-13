@@ -35,9 +35,23 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
+gem 'rspec-rails'
+gem 'rexml'
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui', '~> 2.2'
+# gem 'swagger-blocks' # To generate Swagger docs with blocks
+# gem 'rswag-specs'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
