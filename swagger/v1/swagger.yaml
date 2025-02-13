@@ -1,4 +1,3 @@
----
 openapi: 3.0.1
 info:
   title: API V1
@@ -8,10 +7,12 @@ paths:
     get:
       summary: Retrieves all products
       tags:
-      - Products
+        - Products
       responses:
-        '200':
+        "200":
           description: successful
 servers:
-- url: http://localhost:3000
-  description: Local development server
+  - url: https://acme-product-inventory-api.onrender.com
+    description: Production server (Render)
+  - url: http://localhost:3000
+    description: Local development server
