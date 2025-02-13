@@ -85,3 +85,4 @@ production:
   password: <%= URI.parse(ENV['DATABASE_URL']).password %> # Extracts the password
   host: <%= URI.parse(ENV['DATABASE_URL']).host %> # Extracts the host
   port: <%= URI.parse(ENV['DATABASE_URL']).port %> # Extracts the port
+  sslmode: require # This forces SSL connections
