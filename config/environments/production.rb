@@ -72,6 +72,29 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: ENV['EMAIL_USERNAME'],
+    password: ENV['EMAIL_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  # Ensure ActionMailer uses :smtp for production
+  config.action_mailer.delivery_method = :smtp
+
+  # Raise errors in case of delivery issues (useful for debugging)
+  config.action_mailer.raise_delivery_errors = true
+
+  # Set default URL for mailer in production
+  config.action_mailer.default_url_options = { host: 'https://acme-product-inventory-api.onrender.com' }
+
+  # Set delivery method for production (typically :smtp for email services like Gmail, SendGrid, etc.)
+  config.action_mailer.perform_deliveries = true
+
   config.i18n.fallbacks = true
 
   # Don't log any deprecations.

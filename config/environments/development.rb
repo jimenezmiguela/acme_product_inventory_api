@@ -43,14 +43,18 @@ Rails.application.configure do
     address: 'smtp.gmail.com', # or any other email service provider
     port: 587,
     domain: 'gmail.com',
-    user_name: ENV['EMAIL_USERNAME'], # You can set this in your .env file or Rails secrets
-    password: ENV['EMAIL_PASSWORD'], # You can set this in your .env file or Rails secrets
+    user_name: ENV['EMAIL_USERNAME'],
+    password: ENV['EMAIL_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
 
   # Make sure mailer sends emails in development environment
   config.action_mailer.delivery_method = :smtp
+
+  # Ensure emails are sent during development and raise errors if needed
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Print deprecation notices to the Rails logger.
