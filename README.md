@@ -16,9 +16,7 @@ Local:
 1. Local Swagger API documentation: Enter ``` http://localhost:3000/swagger/index.html ``` at browser.
 2. Local Rspec testing: enter ``` bundle exec rspec ```.
 3. Local Front end rails tests: enter  ``` rails test ```.
-
-Cloud:
-4. Render Swagger API documentation: Enter ``` https://acme-product-inventory-api.onrender.com/swagger/index.html ``` at browser.
+4. (Cloud) Render Swagger API documentation: Enter ``` https://acme-product-inventory-api.onrender.com/swagger/index.html ``` at browser.
 
 ## App summary
 Full-stack app with both client and server code in a more monolithic fashion (using Rails for both front-end and API):
