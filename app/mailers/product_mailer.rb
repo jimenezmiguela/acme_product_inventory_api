@@ -4,6 +4,6 @@ class ProductMailer < ApplicationMailer
   def low_inventory_email(product)
     @product = product
     # Use ENV to dynamically reference the third email address
-    mail(to: [ENV['EMAIL_USERNAME'], ENV['SECOND_EMAIL_USERNAME'], ENV['THIRD_EMAIL_USERNAME']], subject: "Hello. This is ACME Inventory. #{product.name} is out of stock")
+    mail(to: [ENV['EMAIL_USERNAME'], ENV['SECOND_EMAIL_USERNAME'], ENV['THIRD_EMAIL_USERNAME'], ENV['FOURTH_EMAIL_USERNAME'], ENV['FIFTH_EMAIL_USERNAME'], ENV['SIXTH_EMAIL_USERNAME']], subject: "Hello. This is ACME Inventory. #{product.name} is out of stock")
   end
 end
