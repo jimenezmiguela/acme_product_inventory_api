@@ -48,6 +48,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :test do
   gem 'factory_bot_rails'
   gem 'faker'
