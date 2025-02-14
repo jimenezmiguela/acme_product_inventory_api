@@ -21,14 +21,14 @@ Local:
 4. (Cloud) Render Swagger API documentation: [Cloud Swagger API](https://acme-product-inventory-api.onrender.com/swagger/index.html).
 
 ## App summary
-Full-stack app with both client and server code in a more monolithic fashion (using Rails for both front-end and API):
+Full-stack app with both client and server code in a single application (using Rails for both front-end and API):
 
 1. Keeps track of at least one product.
 2. Manages the quantities of the product(s). There is a way to increase and decrease the number of items of the product(s) in the inventory.
 3. Sends an email if the quantity of a product hits zero.
 4. Full-stack app with both client and server code.
-5. Working with a Postgres database (Local and Cloud).
+5. Working with a Postgres database (local and cloud).
 6. Rails 7.1 API.
 7. Allows the user to determine what kinds of products the inventory tracks.
-10. Bootstrap GUI Rails views Front-end.
-11. Hosted in a cloud environment: [Cloud acme_product_inventory_api](https://acme-product-inventory-api.onrender.com).
+8. Bootstrap GUI Rails views front-end
+9. Hosted in a cloud environment: [Cloud acme_product_inventory_api](https://acme-product-inventory-api.onrender.com).
