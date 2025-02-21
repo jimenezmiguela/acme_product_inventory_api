@@ -8,9 +8,8 @@ Basic app for keeping track of an inventory
 3. Enter ``` bundle install ```.
 4. Create ``` .env ``` file at app root and save credentials received.
 5. Create ``` master.key ``` file at config/master.key (save as above).
-6. If you are asked to migrate database: enter ``` bin/rails db:migrate ```.
-7. Enter ``` bin/rails s ``` to run server.
-8. View at local URL: [Local acme_product_inventory_api](http://localhost:3000).
+6. Enter ``` bin/rails s ``` to run server.
+7. View at local URL: [Local acme_product_inventory_api](http://localhost:3000).
 
 ## Testing
 

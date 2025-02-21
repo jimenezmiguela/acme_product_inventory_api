@@ -21,12 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_URL'] || 'acme_product_inventory_api_development' %>
-  username: <%= ENV['DB_USER'] || 'your_local_username' %>
-  password: <%= ENV['DB_PASSWORD'] || 'your_local_password' %>
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
-  port: <%= ENV['DB_PORT'] || 5432 %>
-  sslmode: require
+  url: <%= ENV['DATABASE_URL'] %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
