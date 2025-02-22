@@ -13,11 +13,27 @@ Basic app for keeping track of an inventory
 
 ## Testing
 
-Local:
-1. Local Swagger API documentation: [Local Swagger API](http://localhost:3000/swagger/index.html).
-2. Local Rspec testing: enter ``` bundle exec rspec ```.
-3. Local Front end rails tests: enter  ``` rails test ```.
-4. (Cloud) Render Swagger API documentation: [Cloud Swagger API](https://acme-product-inventory-api.onrender.com/swagger/index.html).
+### Local Swagger API testing:
+1. Go to local Swagger API documentation URL: [Local Swagger API](http://localhost:3000/swagger/index.html).
+2. Make sure ```http://localhost:3000 - Local development server``` is selected from ```Servers```.
+3. Go to ```GET /api/products
+Retrieves all products```
+4. Click on ```Try it out```
+5. Click on ```Execute```
+
+### Rspec testing
+Local Rspec testing: enter ``` bundle exec rspec ```.
+
+### Local testing
+Local Front end rails tests: enter  ``` rails test ```.
+
+### Cloud (Render) Swagger API testing:
+1. (Cloud) Render Swagger API documentation: [Cloud Swagger API](https://acme-product-inventory-api.onrender.com/swagger/index.html).
+2. Make sure ```https://acme-product-inventory-api.onrender.com - Production server (Render)``` is selected from ```Servers```.
+3. Go to ```GET /api/products
+Retrieves all products```
+4. Click on ```Try it out```
+5. Click on ```Execute```
 
 ## App summary
 Full-stack app with both client and server code in a single application (using Rails for both front-end and API):
